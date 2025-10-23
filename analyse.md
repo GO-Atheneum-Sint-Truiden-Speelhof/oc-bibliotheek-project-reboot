@@ -4,7 +4,7 @@
 3. Hoe wil je je boeken inscannen? Wat doe je met boeken of gebruikers die nog niet in het systeem zitten?
 4. Wat zijn je minimum vereisten?
 5. Wil je een webpagina of applicatie?
-6. Is het alleen voor jouw op meerdere toestellen?
+6. Is het een lokale app of web-based?
 7. Moeten boeken reserveerbaar zijn?
 8. Moet er een melding zijn als het boek weer binnen is?
 9. Wat moet er allemaal bewaard worden?
