@@ -1,6 +1,6 @@
 # vragenlijst  bib
 1. Wil je een interactieve menu?
-2. Hoeveel webpagina's wil je?
+2. Welke webpagina's wil je?
 3. Hoe wil je je boeken inscannen? Wat doe je met boeken of gebruikers die nog niet in het systeem zitten?
 4. Wat zijn je minimum vereisten?
 5. Wil je een webpagina of applicatie?
