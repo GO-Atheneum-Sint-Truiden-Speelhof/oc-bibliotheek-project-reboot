@@ -15,3 +15,4 @@
 14. Wil je filters?
 15. Hoe wil je kunnen inloggen (qr-code, ISBN-nummer, ...)?
 16. Hoe wil je je gebruikers identificeren?
+17. Moeten we het rapport teruggeven?
