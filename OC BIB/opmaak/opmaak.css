@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+	font-family: Montserrat;
+	background-image: url("../plaatjes/achtergrond.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	}
+
+nav {
+    font-size: 24px;
+	width: 100%;
+	background-color: black;
+	margin-bottom: 50px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	}
+
+.nav-item {
+	margin-right: 10px;
+	}
+
+.jumbotron {
+	background-color:rgba(256, 256, 256, 0.3);
+	}
+
+.tegel {
+	color: white;
+	}
+
+.footer {
+	margin-top: 20px;
+	background-color: black;
+	padding: 2px;
+	margin-left: 0px;
+	margin-right: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	}
+	
+.footer p {
+	margin: auto;
+	font-size: 20px;
+	color: white;
+	}
+
+.footer a {
+	color: white;
+	}
+	
+.knoppen {
+	text-align: center;
+	margin: 40px;
+}
+
+label {
+	text-align: right;
+}
