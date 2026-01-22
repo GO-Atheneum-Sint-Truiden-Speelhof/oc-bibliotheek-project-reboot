@@ -54,7 +54,7 @@ function generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $second
 
     $imageOut = imagecreatetruecolor($canvasSize, $canvasSize);
     imagecopyresampled($imageOut, $imageX2, 0, 0, 0, 0, $canvasSize, $canvasSize, $canvasSize * $scale, $canvasSize * $scale);
-     echo "Save to ".$file; 
+     //echo "Save to ".$file; 
     imagepng($imageOut,$file); // Save the image to a file
 
     imagedestroy($imageX2);
