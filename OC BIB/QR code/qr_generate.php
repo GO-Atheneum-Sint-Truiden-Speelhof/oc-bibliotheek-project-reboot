@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="nl">
+<?php session_start(); include_once("../server/scripts.php"); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
 <body>
 
     <h2>Gegevens invoeren</h2>
@@ -18,24 +26,7 @@
 </body>
 <?php 
 
-$ini = parse_ini_file("../config/config.ini");
-if(isset($_POST['url'])) {
-    require '../phpqrcode/beautiful-qr-code.php';
-
-    $text = $_POST['url'];
-    $backgroundColor = 'ffffff';
-    $primaryColor = '013009';
-    $secondaryColor = 'ca3301';
-    $scale = 3; // Higher scale, higher quality and slower speed
-
-    $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $_POST['naam']).".png";
-    echo "<img src='".$file."' alt='QR Code'>";
-    
-    generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
-}
-else{
-    echo "<img src='../images/other/placeholder.png' alt='QR Code'>";
-}
+    showqrcode();
 
 //$file moeten bewaren in DB met naam erbij
 //Vanuit formulier.

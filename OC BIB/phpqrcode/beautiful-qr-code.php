@@ -63,7 +63,10 @@ function generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $second
 
 function imagefillroundedrectangle($im, $x, $y, $cx, $cy, $rad, $col)
 {
-
+    $x = round($x);
+    $y = round($y); 
+    $cx = round($cx);
+    $cy = round($cy);
     // Draw the middle cross shape of the rectangle
     imagefilledrectangle($im, $x, $y + $rad, $cx, $cy - $rad, $col);
     imagefilledrectangle($im, $x + $rad, $y, $cx - $rad, $cy, $col);
