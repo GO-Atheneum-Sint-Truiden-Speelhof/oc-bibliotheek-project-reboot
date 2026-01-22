@@ -18,7 +18,7 @@
 </body>
 <?php 
 
-$ini = parse_ini_file("../server/config/config.ini");
+$ini = parse_ini_file("../config/config.ini");
 if(isset($_POST['url'])) {
     require '../phpqrcode/beautiful-qr-code.php';
 
@@ -29,12 +29,14 @@ if(isset($_POST['url'])) {
     $scale = 3; // Higher scale, higher quality and slower speed
 
     $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $_POST['naam']).".png";
-    echo $file;
-generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
+    echo "<img src='".$file."' alt='QR Code'>";
+    
+    generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
+}
+else{
+    echo "<img src='../images/other/placeholder.png' alt='QR Code'>";
 }
 
 //$file moeten bewaren in DB met naam erbij
 //Vanuit formulier.
-
-echo "<img src='".$file."' alt='QR Code'>";
 ?>
