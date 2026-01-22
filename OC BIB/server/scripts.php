@@ -1,9 +1,9 @@
 <?php 
 
 // qr_generate.php
-    function showqrcode() {
+    function showqrcode($isbn, $naam) {
     $ini = parse_ini_file("../config/config.ini");
-    if(isset($_POST['url'])) {
+
         require '../phpqrcode/beautiful-qr-code.php';
 
         $text = $_POST['url'];
@@ -12,13 +12,16 @@
         $secondaryColor = 'ca3301';
         $scale = 3; // Higher scale, higher quality and slower speed
 
-        $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $_POST['naam']).".png";
+        $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $naam).".png";
         echo "<img src='".$file."' alt='QR Code'>";
-        
-        generateBeautifulQRCode($text, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
-    }
-    else{
-        echo "<img src='../images/other/placeholder.png' alt='QR Code'>";
-    } 
+        // bestaat isbn al? bestaat naam al? bestaat bestand al?
+        SELECT * from book WHERE isbn = '$isbn';
+        if (file_exists($file)) {
+            return $file; // bestand bestaat al
+        }
+        else {
+            return false; // bestand bestaat niet
+        }
+        generateBeautifulQRCode($isbn, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
     }
 ?>
