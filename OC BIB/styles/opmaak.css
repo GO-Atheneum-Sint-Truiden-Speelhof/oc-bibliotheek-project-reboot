@@ -1,0 +1,15 @@
+.jumbotron {
+    background-color: rgba(60, 60, 60, 0.8);
+    color:rgb(31, 159, 136);
+}
+
+header {
+    color:white;
+    text-align: center;
+}
+
+body {
+
+    background-image: url(../images/background/LibraryBackground.jpg);
+    text-align: center;
+}
