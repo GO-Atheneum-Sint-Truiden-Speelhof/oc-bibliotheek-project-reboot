@@ -1,7 +1,7 @@
 <?php
  function connectDB() {     
     $ini = parse_ini_file("../config/config.ini");
-    $db = new mysqli($ini['db_host'], $ini['db_user'], $ini['db_pass'], $ini['db_name']);
+    $db = new mysqli($ini['host'], $ini['username'], $ini['password'], $ini['databasename']);
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
     }
@@ -17,11 +17,11 @@
     }
     function getBookByISBN($ISBN){
         $db = connectDB();
-        $qry = "SELECT * FROM `book` WHERE `ISBN` = ?";
+        $qry = "SELECT Count(*) FROM `book` WHERE `ISBN` = ?";
         $stmt = $db->prepare($qry);
         $stmt->bind_param("i", $ISBN);
         $stmt->execute();
         $result = $stmt->get_result();
         $db -> close();
-        return $result->fetch_assoc();
+        return $result;
     }
