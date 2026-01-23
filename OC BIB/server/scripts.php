@@ -1,4 +1,5 @@
 <?php 
+include_once("../server/functions.php");
 
 // qr_generate.php
     function showqrcode($isbn, $naam) {
@@ -15,8 +16,9 @@
         $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $naam).".png";
         echo "<img src='".$file."' alt='QR Code'>";
         // bestaat isbn al? bestaat naam al? bestaat bestand al?
-        SELECT * from book WHERE isbn = '$isbn';
+        $book = getBookByISBN($isbn);
         if (file_exists($file)) {
+            echo "link naar de qr code: ".$file;
             return $file; // bestand bestaat al
         }
         else {
