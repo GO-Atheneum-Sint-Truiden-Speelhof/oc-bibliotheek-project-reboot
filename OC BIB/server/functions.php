@@ -14,4 +14,14 @@
         $title = escape_string(htmlspecialchars($_POST['Title']));
         $stmt->bind_param("ssssisssis", $_POST['Title'], $_POST['Author'], $_POST['Summary'], $_POST['ISBN'], $_POST['RentedOut'], $_POST['Cover'], $_POST['QR'], $_POST['Genre'], $_POST['Pages'], $_POST['Age']);
         $stmt->execute();
-    }   
+    }
+    function getBookByISBN($ISBN){
+        $db = connectDB();
+        $qry = "SELECT * FROM `book` WHERE `ISBN` = ?";
+        $stmt = $db->prepare($qry);
+        $stmt->bind_param("i", $ISBN);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db -> close();
+        return $result->fetch_assoc();
+    }
