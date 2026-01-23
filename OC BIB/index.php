@@ -12,29 +12,53 @@
 </header>
 
 <body>
-	
 	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen></h3></div>
+	<div class="card-body">
+		<form action="" method="post">
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="isbn" type="text" placeholder="Enter ISBN" />
+						<label for="isbn">ISBN-nummer</label>
+					</div>
+				</div>
+			</div>
 
-	<form action="" method="post">
-		<div class="row mb-3">
-			<div class="col-md-6">
-				<div class="form-floating mb-3 mb-md-0">
-					<input class="form control" name="isbn" type="text" placeholder="Enter ISBN" />
-					<label for="isbn">ISBN-nummer</label>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="titel" type="text" placeholder="Enter titel" />
+						<label for="titel">Titel</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="auteur" type="text" placeholder="Enter author" />
+						<label for="auteur">Auteur</label>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="form-floating mb-3 mb-md-0">
-					<input class="form control" name="titel" type="text" placeholder="Enter titel" />
-					<label for="titel">Titel</label>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="cover" type="file" placeholder="Enter photo cover" />
+						<label for="cover">Cover photo</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="genre" type="text" placeholder="Enter genre" />
+						<label for="genre">Genre</label>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="col-md">
-			<button type="button" onclick="Toevoegen()">Toevoegen</button>
-		</div>
-	</form>
+
+			<div class="col-md">
+				<button type="button" onclick="Toevoegen()">Toevoegen</button>
+			</div>
+
+		</form>
+	</div>
 </body>
-
 </html>
