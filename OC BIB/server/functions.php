@@ -12,7 +12,7 @@
         $qry = "INSERT INTO `book`(`Title`, `Author`, `Summary`, `ISBN`, `RentedOut`, `Cover`, `QR`, `Genre`, `Pages`, `Age`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($qry);
         $title = escape_string(htmlspecialchars($_POST['Title']));
-        $stmt->bind_param("ssssisssis", $_POST['Title'], $_POST['Author'], $_POST['Summary'], $_POST['ISBN'], $_POST['RentedOut'], $_POST['Cover'], $_POST['QR'], $_POST['Genre'], $_POST['Pages'], $_POST['Age']);
+        $stmt->bind_param("ssssisssis", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], $_POST['RentedOut'], $_POST['cover'], $_POST['QR'], $_POST['genre'], $_POST['pages'], $_POST['Age']);
         $stmt->execute();
     }
     function getBookByISBN($ISBN){

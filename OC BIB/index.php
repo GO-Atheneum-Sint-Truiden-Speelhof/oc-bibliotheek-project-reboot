@@ -12,7 +12,7 @@
 </header>
 
 <body>
-	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen></h3></div>
+	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen</h3></div>
 	<div class="card-body">
 		<form action="" method="post">
 			<div class="row mb-3">
@@ -37,6 +37,12 @@
 						<label for="auteur">Auteur</label>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="pages" type="text" placeholder="Enter page" />
+						<label for="pages">Pages</label>
+					</div>
+				</div>
 			</div>
 
 			<div class="row mb-3">
@@ -50,6 +56,15 @@
 					<div class="form-floating mb-3 mb-md-0">
 						<input class="form control" name="genre" type="text" placeholder="Enter genre" />
 						<label for="genre">Genre</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<div class="form-floating mb-3 mb-md-0">
+						<input class="form control" name="summary" type="text" placeholder="Enter summary" />
+						<label for="summary">Summary</label>
 					</div>
 				</div>
 			</div>
