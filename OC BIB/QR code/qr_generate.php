@@ -25,8 +25,8 @@
     <div id="qrcode"></div>
 </body>
 <?php 
-
-    showqrcode();
+    // later nog aanpassen  (voorlopig testboek)
+    showqrcode(123457890, $_POST['naam']);
 
 //$file moeten bewaren in DB met naam erbij
 //Vanuit formulier.
