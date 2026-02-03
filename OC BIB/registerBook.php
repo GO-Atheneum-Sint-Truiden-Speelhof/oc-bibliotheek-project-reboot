@@ -9,6 +9,6 @@
             addBook($file);
             header("Location: index.php?status=success");
         }
-        }
+    }
     header("Location: index.php?status=error");
 ?>
