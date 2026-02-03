@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang=nl>
 <head>
 	<meta charset=utf-8>
@@ -12,9 +12,19 @@
 </header>
 
 <body>
+	<?php if(isset($_GET['status']) && $_GET['status'] == 'success'){ ?>
+		<div class="alert alert-success" role="alert">
+			Boek succesvol toegevoegd!
+		</div>
+	<?php } ?>
+	<?php if(isset($_GET['status']) && $_GET['status'] == 'error'){ ?>
+		<div class="alert alert-danger" role="alert">
+			Fout bij toevoegen van boek.
+		</div>
+	<?php } ?>
 	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen></h3></div>
 	<div class="card-body">
-		<form action="" method="post">
+		<form action="registerBook.php" method="post">
 			<div class="row mb-3">
 				<div class="col-md-6">
 					<div class="form-floating mb-3 mb-md-0">
@@ -55,7 +65,7 @@
 			</div>
 
 			<div class="col-md">
-				<button type="button" onclick="Toevoegen()">Toevoegen</button>
+				<button type="submit" class="btn btn-primary">Toevoegen</button>
 			</div>
 
 		</form>
