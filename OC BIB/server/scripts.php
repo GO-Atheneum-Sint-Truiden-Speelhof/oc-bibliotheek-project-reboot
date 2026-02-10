@@ -5,7 +5,7 @@ include_once("functions.php");
     function showqrcode($isbn, $naam) {
         $ini = parse_ini_file("config.ini");
 
-        require ("../phpqrcode/beautiful-qr-code.php");
+        require(realpath(dirname(__FILE__).'/../phpqrcode/beautiful-qr-code.php'));
         $backgroundColor = 'ffffff';
         $primaryColor = '013009';
         $secondaryColor = 'ca3301';
