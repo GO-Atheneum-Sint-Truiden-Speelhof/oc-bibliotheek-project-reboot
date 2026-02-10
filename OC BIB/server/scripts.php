@@ -18,7 +18,7 @@ include_once("functions.php");
         $isbn .= "_".($aantalBoeken+1);
         generateBeautifulQRCode($isbn, $backgroundColor, $primaryColor, $secondaryColor, $scale, $file);
         if (file_exists($file)) {
-            echo "link naar de qr code: ".$file;
+            echo "link naar de qr code: ".$file;  
             return $file; // bestand bestaat al
         }
         else {
