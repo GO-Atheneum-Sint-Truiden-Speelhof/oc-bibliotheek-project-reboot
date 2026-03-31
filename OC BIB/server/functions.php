@@ -11,9 +11,11 @@
         $db = connectDB();
         $qry = "INSERT INTO `book`(`Title`, `Author`, `Summary`, `ISBN`, `RentedOut`, `Cover`, `QR`, `Genre`, `Pages`, `Age`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($qry);
-        $title = escape_string(htmlspecialchars($_POST['titel']));
-        $stmt->bind_param("ssssisssis", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], "false", $_POST['cover'], $file, $_POST['genre'], $_POST['Pages'], 10);
+        $rentedOut = 0;
+        $age = 10;
+        $stmt->bind_param("ssssisssii", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], $rentedOut, $_POST['cover'], $file, $_POST['genre'], $_POST['pages'], $age);
         $stmt->execute();
+        $db->close();
     }
     function getBookByISBN($ISBN){
         $db = connectDB();
@@ -37,4 +39,5 @@
         $db -> close();
         return $result->fetch_row()[0];
     }
+    
 ?>
