@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../server/functions.php';
+include 'server/functions.php';
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $username = $_POST['user'];
@@ -37,7 +37,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" id="password" class="form-control"/>
+            <input type="password" id="password" class="form-control"/>
             <label class="form-label" for="password">Wachtwoord</label>
         </div>
 
