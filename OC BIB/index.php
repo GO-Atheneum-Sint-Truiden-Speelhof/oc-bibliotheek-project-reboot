@@ -1,4 +1,13 @@
- <!doctype html>
+<?php
+	Session_start();
+	if(isset($_SESSION['status']) && $_SESSION['status'] == 'success'){
+		echo "Boek succesvol toegevoegd!";
+	}
+	else if(isset($_SESSION['status']) && $_SESSION['status'] == 'error'){
+		echo "Fout bij toevoegen van boek.";
+	}
+?>
+<!doctype html>
 <html lang=nl>
 <head>
 	<meta charset=utf-8>
@@ -12,7 +21,7 @@
 </header>
 
 <body>
-	<?php if(isset($_GET['status']) && $_GET['status'] == 'success'){ ?>
+	<!--<?php /* if(isset($_GET['status']) && $_GET['status'] == 'success'){ ?>
 		<div class="alert alert-success" role="alert">
 			Boek succesvol toegevoegd!
 		</div>
@@ -20,8 +29,9 @@
 	<?php if(isset($_GET['status']) && $_GET['status'] == 'error'){ ?>
 		<div class="alert alert-danger" role="alert">
 			Fout bij toevoegen van boek.
+			<?php print_r($_POST); ?>
 		</div>
-	<?php } ?>
+	<?php }*/ ?>-->
 	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen</h3></div>
 	<div class="card-body">
 		<form action="registerBook.php" method="post">
@@ -73,7 +83,7 @@
 			<div class="row mb-3">
 				<div class="col-md-6">
 					<div class="form-floating mb-3 mb-md-0">
-						<input class="form control" name="summary" type="text" placeholder="Enter summary" />
+						<textarea class="form control" name="summary" placeholder="Enter summary"></textarea>
 						<label for="summary">Summary</label>
 					</div>
 				</div>
