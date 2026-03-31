@@ -43,7 +43,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" id="password" class="form-control"/>
+            <input type="password" id="password" class="form-control"/>
             <label class="form-label" for="password">Wachtwoord</label>
         </div>
 
