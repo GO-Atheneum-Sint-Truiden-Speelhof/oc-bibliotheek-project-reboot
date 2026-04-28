@@ -36,16 +36,17 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     <title>Login</title>
 </head>
 <body>
-    <form>
-        <div class="form-outline mb-4">
-            <input type="text" id="user" class="form-control"/>
-            <label class="form-label" for="user">Gebruikersnaam</label>
+    <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="name">
         </div>
-
-        <div class="form-outline mb-4">
-            <input type="password" id="password" class="form-control"/>
-            <label class="form-label" for="password">Wachtwoord</label>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
         </div>
-
-        <button type="submit">Log in</button>
+        <section style="margin-left:2rem;">
+            <button type="submit" name="login">Login</button>
+        </section>
+    </form>
 </body>
