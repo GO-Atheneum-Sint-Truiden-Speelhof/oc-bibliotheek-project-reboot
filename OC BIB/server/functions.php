@@ -70,10 +70,6 @@
         $stmt->bind_param("s", $ISBN);
         $stmt->execute();
         $result = $stmt->get_result();
-        if ($result->num_rows === 0) {
-            $db->close();
-            die("Boek niet gevonden");
-        }
         $row = $result->fetch_assoc();
         $db->close();
         return $row;
