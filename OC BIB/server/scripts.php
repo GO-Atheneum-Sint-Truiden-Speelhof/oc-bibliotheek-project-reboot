@@ -7,10 +7,11 @@ include_once("functions.php");
 
         require(realpath(dirname(__FILE__).'/../phpqrcode/beautiful-qr-code.php'));
         $backgroundColor = 'ffffff';
-        $primaryColor = '013009';
-        $secondaryColor = 'ca3301';
+        $primaryColor = '000000';
+        $secondaryColor = '000000';
         $scale = 3; // Higher scale, higher quality and slower speed
 
+      
         $file = $ini['output_dir']."qr_".preg_replace('/[^A-Za-z0-9]/', '_', $naam).".png";
         
         // bestaat isbn al? Hoeveel boeken?
