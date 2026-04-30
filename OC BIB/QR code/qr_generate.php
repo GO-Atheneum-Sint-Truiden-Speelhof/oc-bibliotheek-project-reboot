@@ -7,7 +7,6 @@
     <title>QR Code Generator</title>
 </head>
 <body>
-
     <h2>Gegevens invoeren</h2>
     <form action="qr_generate.php" method="post" id="dataForm">
         <label for="naam">Naam:</label><br>
