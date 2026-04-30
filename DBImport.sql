@@ -47,4 +47,3 @@ CREATE TABLE `Category` (
   `Name` TINYTEXT,
   PRIMARY KEY (`ID`)
 );
-

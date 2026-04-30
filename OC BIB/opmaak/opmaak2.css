@@ -1,0 +1,131 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fffbb1;
+    color: #1f3143;
+}
+.page-shell {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 24px;
+}
+.page-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.card {
+    background: #DCDBE0;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(31, 49, 67, 0.12);
+    overflow: hidden;
+}
+.card-header {
+    background: #DCDBE0;
+    color: #1f3143;
+    padding: 24px 28px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+.card-body {
+    padding: 28px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+.form-control {
+    width: 95%;
+    min-height: 35px;
+    padding: 12px 14px;
+    border: 1px solid #d5dce6;
+    border-radius: 14px;
+    background: #f8fbff;
+    color: #1f3143;
+}
+.form-control:focus {
+    outline: none;
+    border-color: #5b8dff;
+    box-shadow: 0 0 0 4px rgba(91, 141, 255, 0.12);
+    background: #ffffff;
+}
+.form-actions {
+    margin-top: 24px;
+    text-align: right;
+}
+.btn {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #1f3143;
+    color: white;
+}
+
+
+@media (max-width: 680px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-actions {
+        text-align: center;
+    }
+}
+
+.boek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+.boek-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(31, 49, 67, 0.08);
+    box-shadow: 0 14px 30px rgba(31, 49, 67, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+.boek-card-foto {
+    background: #f2f5fb;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boek-card-foto img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.boek-card-body {
+    padding: 18px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.boek-card-body h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1f3143;
+}
+.boek-card-body p {
+    margin: 0;
+    color: #45516a;
+    font-size: 0.95rem;
+}

@@ -11,9 +11,11 @@
         $db = connectDB();
         $qry = "INSERT INTO `book`(`Title`, `Author`, `Summary`, `ISBN`, `RentedOut`, `Cover`, `QR`, `Genre`, `Pages`, `Age`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($qry);
-        $title = escape_string(htmlspecialchars($_POST['titel']));
-        $stmt->bind_param("ssssisssis", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], "false", $_POST['cover'], $file, $_POST['genre'], $_POST['Pages'], 10);
+        $rentedOut = 0;
+        $age = 10;
+        $stmt->bind_param("ssssisssii", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], $rentedOut, $_POST['cover'], $file, $_POST['genre'], $_POST['pages'], $age);
         $stmt->execute();
+        $db->close();
     }
     function getBookByISBN($ISBN){
         $db = connectDB();
@@ -24,17 +26,53 @@
         $result = $stmt->get_result();
         $db -> close();
         return $result->fetch_row()[0];
+        //returns either 1 (if there is a book with the given ISBN) or 0 (if there is no book with the given ISBN)
     }
 
-    function getPasswordByUsername($username){
+    function getPasswordByUsername($username) {
         $db = connectDB();
         $qry = "SELECT `Password` FROM `user` WHERE `Username` = ?";
         $stmt = $db->prepare($qry);
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
-        $result->num_rows === 0 ? die("Gebruiker niet gevonden of wachtwoord incorrect") : null;
-        $db -> close();
-        return $result->fetch_row()[0];
+        if ($result->num_rows === 0) {
+            $db->close();
+            die("Gebruiker niet gevonden of wachtwoord incorrect");
+        }
+        $row = $result->fetch_row();
+        $db->close();
+        return password_hash($row[0], PASSWORD_DEFAULT);
+        //returns the hashed password for the given username, or an error message if the user is not found
     }
+    function getIsbnAllBooks(){
+        $db = connectDB();
+        $qry = "SELECT `ISBN` FROM `book`";
+        $stmt = $db->prepare($qry);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows === 0) {
+            $db->close();
+            die("Er zijn geen boeken in de database");
+        }
+        $isbns = [];
+        while ($row = $result->fetch_row()) {
+            $isbns[] = $row[0];
+        }
+        $db->close();
+        return $isbns;
+        // returns an array of all ISBNs in the book database, or an error message if there are no books in the database
+    }
+    function getInfoBook($ISBN){
+        $db = connectDB();
+        $qry = "SELECT `Title`, `Author`, `Summary`, `ISBN`, `RentedOut`, `Cover`, `QR`, `Genre`, `Pages`, `Age` FROM `book` WHERE `ISBN` = ?";
+        $stmt = $db->prepare($qry);
+        $stmt->bind_param("s", $ISBN);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $db->close();
+        return $row;
+        // returns an associative array with all the information of the book with the given ISBN, or an error message if the book is not found
+    }    
 ?>

@@ -7,19 +7,6 @@ body {
 	background-attachment: fixed;
 	}
 
-nav {
-    font-size: 24px;
-	width: 100%;
-	background-color: black;
-	margin-bottom: 50px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	}
-
-.nav-item {
-	margin-right: 10px;
-	}
-
 .jumbotron {
 	background-color:rgba(256, 256, 256, 0.3);
 	}
@@ -55,4 +42,39 @@ nav {
 
 label {
 	text-align: right;
+}
+
+nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 1.5rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list li a {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  text-decoration: none;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-list li a:hover {
+  color: #111827;
+  border-bottom-color: #d1d5db;
+}
+
+.nav-list li.active a {
+  color: #111827;
+  border-bottom-color: currentColor;
+  font-weight: 500;
 }
