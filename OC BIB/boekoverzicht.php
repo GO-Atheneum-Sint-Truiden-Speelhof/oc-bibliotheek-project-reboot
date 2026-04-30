@@ -15,6 +15,8 @@ foreach ($isbns as $isbn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles/opmaak.css">
     <title>Boekoverzicht</title>
+    <link rel="stylesheet" type="text/css" href="./opmaak/opmaak2.css">
+    <title>Library Book Overview</title>
 </head>
 <body>
     <div class="page-shell">

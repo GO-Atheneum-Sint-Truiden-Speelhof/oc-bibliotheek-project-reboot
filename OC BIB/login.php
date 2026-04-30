@@ -10,6 +10,7 @@ include 'server/functions.php';
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1">
         <link rel="stylesheet" type="text/css" href="./opmaak/opmaak.css">
+        
         <title>Login</title>
     </head>
     <body>
