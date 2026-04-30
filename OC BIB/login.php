@@ -66,4 +66,7 @@ include 'server/functions.php';
         padding: 50px;
         text-align: center;
     }
+    .col{
+        margin: 10px auto;
+    }
 </style>
