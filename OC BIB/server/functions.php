@@ -26,6 +26,7 @@
         $result = $stmt->get_result();
         $db -> close();
         return $result->fetch_row()[0];
+        //returns either 1 (if there is a book with the given ISBN) or 0 (if there is no book with the given ISBN)
     }
 
     function getPasswordByUsername($username) {
@@ -42,6 +43,7 @@
         $row = $result->fetch_row();
         $db->close();
         return password_hash($row[0], PASSWORD_DEFAULT);
+        //returns the hashed password for the given username, or an error message if the user is not found
     }
     
 ?>
