@@ -7,19 +7,6 @@ body {
 	background-attachment: fixed;
 	}
 
-nav {
-    font-size: 24px;
-	width: 100%;
-	background-color: black;
-	margin-bottom: 50px;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	}
-
-.nav-item {
-	margin-right: 10px;
-	}
-
 .jumbotron {
 	background-color:rgba(256, 256, 256, 0.3);
 	}
@@ -55,4 +42,127 @@ nav {
 
 label {
 	text-align: right;
+}
+/*code van styles/opmaak.css*/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fffbb1;
+    color: #1f3143;
+}
+.page-shell {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 24px;
+}
+.page-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.card {
+    background: #DCDBE0;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(31, 49, 67, 0.12);
+    overflow: hidden;
+}
+.card-header {
+    background: #DCDBE0;
+    color: #1f3143;
+    padding: 24px 28px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+.card-body {
+    padding: 28px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+.form-control {
+    width: 95%;
+    min-height: 35px;
+    padding: 12px 14px;
+    border: 1px solid #d5dce6;
+    border-radius: 14px;
+    background: #f8fbff;
+    color: #1f3143;
+}
+.form-control:focus {
+    outline: none;
+    border-color: #5b8dff;
+    box-shadow: 0 0 0 4px rgba(91, 141, 255, 0.12);
+    background: #ffffff;
+}
+.form-actions {
+    margin-top: 24px;
+    text-align: right;
+}
+.btn {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #1f3143;
+    color: white;
+}
+
+
+@media (max-width: 680px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-actions {
+        text-align: center;
+    }
+}
+
+nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 1.5rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list li a {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  text-decoration: none;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-list li a:hover {
+  color: #111827;
+  border-bottom-color: #d1d5db;
+}
+
+.nav-list li.active a {
+  color: #111827;
+  border-bottom-color: currentColor;
+  font-weight: 500;
 }
