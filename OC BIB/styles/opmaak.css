@@ -86,10 +86,7 @@ html, body {
     }
 }
 
-.book-overview-shell {
-    width: min(100%, 1200px);
-}
-.book-grid {
+.boek-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 22px;
@@ -103,14 +100,14 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-.boek-card-image {
+.boek-card-foto {
     background: #f2f5fb;
     min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.boek-card-image img {
+.boek-card-foto img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -122,24 +119,13 @@ html, body {
     flex-direction: column;
     gap: 10px;
 }
-.boek-card-title {
+.boek-card-body h2 {
     margin: 0;
     font-size: 1.1rem;
     color: #1f3143;
 }
-.boek-card-meta,
-.boek-card-field {
+.boek-card-body p {
     margin: 0;
     color: #45516a;
     font-size: 0.95rem;
-}
-.boek-card-availability {
-    margin-top: 8px;
-    font-weight: 700;
-}
-.book-card-availability.beschikbaar {
-    color: #1a7f3d;
-}
-.book-card-availability.niet-beschikbaar {
-    color: #c2484e;
 }
