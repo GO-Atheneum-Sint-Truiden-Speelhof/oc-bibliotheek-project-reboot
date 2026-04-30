@@ -6,9 +6,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $username = $_POST['user'];
     $password = $_POST['password'];
     $hash = getPasswordByUsername($username);
-    echo "Username: " . $username . "<br>";
-    echo "Password: " . $password . "<br>";
-    echo "Hash: " . $hash . "<br>";
+    
 
     // Hier zou je normaal gesproken de gebruikersgegevens controleren, bijvoorbeeld tegen een database
     // Voor dit voorbeeld gebruiken we hardcoded waarden
