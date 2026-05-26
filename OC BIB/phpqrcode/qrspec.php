@@ -525,7 +525,7 @@
                 } ?>
                 <style>
                     .p { background-color: yellow; }
-                    .m { background-color: #00FF00; }
+                    .m { background-color: #000000; }
                     .s { background-color: #FF0000; }
                     .c { background-color: aqua; }
                     .x { background-color: pink; }
