@@ -25,12 +25,12 @@ foreach ($isbns as $isbn) {
             <?php if (empty($boeken)) { ?>
                 <div>Er zijn nog geen boeken beschikbaar.</div>
             <?php } else {
-                foreach ($boeken as $boek) {
-            ?>
-            <article class="boek-card">
+                foreach ($boeken as $index => $boek){
+                    ?>
+                    <article class="boek-card">
                 <div class="boek-card-foto">
                     <?php if (!empty($boek['Cover'])) { ?>
-                        <img src="<?= htmlspecialchars($boek['Cover']) ?>">
+                        <img src="images/cover/<?= htmlspecialchars($boek['Cover']) ?>">
                     <?php } ?>
                 </div>
                 <div class="boek-card-body">
@@ -39,10 +39,15 @@ foreach ($isbns as $isbn) {
                     <p>Genre: <?= htmlspecialchars($boek['Genre']) ?></p>
                     <p>Pagina's: <?= htmlspecialchars($boek['Pages']) ?></p>
                     <p>Leeftijd: <?= htmlspecialchars($boek['Age']) ?></p>
+                    <p>Inhoud: <?= htmlspecialchars($boek['Summary']) ?></p>
                 </div>
             </article>
+                    <?php
+                }
+            ?>
+            
             <?php }
-            } ?>
+             ?>
         </div>
     </div>
 </body>

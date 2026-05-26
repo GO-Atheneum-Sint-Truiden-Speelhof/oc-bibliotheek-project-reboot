@@ -1,23 +1,4 @@
-<?php
-    /*session_start();
-    include("server/functions.php");
-    include("server/scripts.php");
-    
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $existingBook = getBookByISBN($_POST['isbn']);
-        $row = $existingBook;
-        $file = showqrcode($_POST['isbn'], $_POST['titel']);
-        if($file){
-            addBook($file);
-            $_SESSION['status'] = 'success';
-            header("Location: index.php");
-            exit();
-        }
-        $_SESSION['status'] = 'error';
-        header("Location: index.php");
-        exit();
-    }*/
-    
+<?php    
     session_start();
     include("server/functions.php");
     include("server/scripts.php");

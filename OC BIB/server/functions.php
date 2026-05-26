@@ -3,15 +3,15 @@
     $ini = parse_ini_file("db.ini");
     $db = new mysqli($ini['host'], $ini['username'], $ini['password'], $ini['databasename']);
     if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
+            die("Connection failed: " . $db->connect_error);
+        }
     return $db;
     }
     function addBook($file){
         $db = connectDB();
         $qry = "INSERT INTO `book`(`Title`, `Author`, `Summary`, `ISBN`, `RentedOut`, `Cover`, `QR`, `Genre`, `Pages`, `Age`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($qry);
-        $rentedOut = 0;
+        $rentedOut = 0; 
         $age = 10;
         $stmt->bind_param("ssssisssii", $_POST['titel'], $_POST['auteur'], $_POST['summary'], $_POST['isbn'], $rentedOut, $_POST['cover'], $file, $_POST['genre'], $_POST['pages'], $age);
         $stmt->execute();
@@ -38,12 +38,21 @@
         $result = $stmt->get_result();
         if ($result->num_rows === 0) {
             $db->close();
-            die("Gebruiker niet gevonden of wachtwoord incorrect");
+            die("Gebruiker niet gevonden");
         }
         $row = $result->fetch_row();
         $db->close();
         return password_hash($row[0], PASSWORD_DEFAULT);
         //returns the hashed password for the given username, or an error message if the user is not found
+    }
+    function addUser($username, $password){
+        $db = connectDB();
+        $qry = "INSERT INTO `user`(`Username`, `Password`) VALUES (?, ?)";
+        $stmt = $db->prepare($qry);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bind_param("ss", $username, $hashedPassword);
+        $stmt->execute();
+        $db->close();
     }
     function getIsbnAllBooks(){
         $db = connectDB();
